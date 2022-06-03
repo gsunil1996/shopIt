@@ -11,5 +11,3 @@ router.get("/products", getProducts);
 router.post("/product/new", newProduct);
 
 module.exports = router;
-
-
