@@ -1,12 +1,11 @@
-import React, { useEffect, useState } from "react";
-import { BrowserRouter as Router, Route } from "react-router-dom";
+import React from 'react'
 
-function App() {
+const App = () => {
   return (
-    <>
-    This is app page
-    </>
-  );
+    <div>
+      This is app page
+    </div>
+  )
 }
 
-export default App;
+export default App
