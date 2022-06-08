@@ -1,9 +1,16 @@
-import React from 'react'
+import React from 'react';
+import "./App.css";
+import Home from './components/Home';
+import Footer from './components/layouts/Footer';
+import Header from './components/layouts/Header';
+
 
 const App = () => {
   return (
     <div>
-      This is app page testinggggggggggggggggggggggggggggg
+      <Header />
+      <Home />
+      <Footer />
     </div>
   )
 }

@@ -13,6 +13,7 @@ exports.newProduct = catchAsyncErrors(async (req, res, next) => {
     success: true,
     product,
   });
+  
 });
 
 // Get all products => /api/v1/products?keyword=apple
