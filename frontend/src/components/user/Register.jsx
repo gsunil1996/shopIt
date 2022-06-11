@@ -1,4 +1,4 @@
-import React, { Fragment, useState, useEffect } from 'react'
+import React, { useState, useEffect } from 'react'
 
 import MetaData from "../layouts/MetaData";
 
@@ -48,8 +48,17 @@ const Register = ({ history }) => {
         formData.set("email", email);
         formData.set("password", password);
         formData.set("avatar", avatar);
+        
+        // console.log(typeof formData, "formData");
+        // for (const [key, value] of formData) {
+        //   console.log(`${key}: ${value}\n`);
+        // }
+
 
         dispatch(register(formData));
+
+         console.log(formData, "After dispatch");
+
       };
 
       const onChange = (e) => {
@@ -64,10 +73,12 @@ const Register = ({ history }) => {
           };
 
           reader.readAsDataURL(e.target.files[0]);
+
         } else {
           setUser({ ...user, [e.target.name]: e.target.value });
         }
-      };
+  };
+  
 
   return (
     <div>
