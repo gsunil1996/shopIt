@@ -8,6 +8,7 @@ import { useAlert } from "react-alert";
 import Pagination from "react-js-pagination";
 import Slider from "rc-slider";
 import "rc-slider/assets/index.css";
+import "../App.css";
 
 
 const { createSliderWithTooltip } = Slider;
@@ -46,6 +47,7 @@ const Home = ({ match }) => {
     "Sports",
     "Outdoor",
     "Home",
+    "All"
   ];
 
   const keyword = match.params.keyword;
@@ -109,6 +111,7 @@ const Home = ({ match }) => {
                                 cursor: "pointer",
                                 listStyleType: "none",
                               }}
+                              className="categoryClick"
                               key={category}
                               onClick={() => setCategory(category)}
                             >
@@ -116,37 +119,36 @@ const Home = ({ match }) => {
                             </li>
                           ))}
                         </ul>
-                        </div>
+                      </div>
 
-                         <hr className="my-3" />
+                      <hr className="my-3" />
 
                       <div className="mt-5">
                         <h4 className="mb-3">Ratings</h4>
 
                         <ul className="pl-0">
-                          {[5,4,3,2,1].map((star) => (
+                          {[5, 4, 3, 2, 1, 0].map((star) => (
                             <li
                               style={{
                                 cursor: "pointer",
                                 listStyleType: "none",
                               }}
+                              className="ratingClick"
                               key={star}
                               onClick={() => setRatings(star)}
                             >
                               <div className="rating-outer">
-                                <div className="rating-inner"
+                                <div
+                                  className="rating-inner"
                                   style={{
-                                  width: `${star * 20}%`
-                                }}
-                                >
-
-                                </div>
+                                    width: `${star * 20}%`,
+                                  }}
+                                ></div>
                               </div>
                             </li>
                           ))}
                         </ul>
-                        </div>
-                        
+                      </div>
                     </div>
                   </div>
 
