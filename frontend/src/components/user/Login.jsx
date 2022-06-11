@@ -19,11 +19,11 @@ const Login = ({ history, location }) => {
       (state) => state.auth
     );
 
-    // const redirect = location.search ? location.search.split("=")[1] : "/";
+    const redirect = location.search ? location.search.split("=")[1] : "/";
 
     useEffect(() => {
       if (isAuthenticated) {
-        history.push("/");
+        history.push(redirect);
       }
 
       if (error) {
