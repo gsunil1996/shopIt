@@ -10,6 +10,7 @@ import Register from './components/user/Register';
 
 import { loadUser } from "./redux/actions/userActions";
 import store from "./redux/store";
+import Profile from './components/user/Profile';
 
 
 const App = () => {
@@ -29,6 +30,7 @@ const App = () => {
 
           <Route path="/login" component={Login} />
           <Route path="/register" component={Register} />
+          <Route path="/me" component={Profile} exact />
         </div>
         <Footer />
       </BrowserRouter>
