@@ -16,6 +16,8 @@ import UpdatePassword from './components/user/UpdatePassword';
 import ForgotPassword from './components/user/ForgotPassword';
 import NewPassword from './components/user/NewPassword';
 import Cart from './components/cart/Cart';
+import Shipping from './components/cart/Shipping';
+import ConfirmOrder from './components/cart/ConfirmOrder';
 
 
 const App = () => {
@@ -34,6 +36,9 @@ const App = () => {
           <Route path="/product/:id" component={ProductDetails} exact />
 
           <Route path="/cart" component={Cart} exact />
+          <ProtectedRoute path="/shipping" component={Shipping} />
+          <ProtectedRoute path="/confirm" component={ConfirmOrder} exact />
+
           <Route path="/login" component={Login} />
           <Route path="/register" component={Register} />
           <Route path="/password/forgot" component={ForgotPassword} exact />
