@@ -7,12 +7,13 @@ import {
   productDetailsReducer,
 } from "../redux/reducers/productReducers";
 
-import {authReducer} from "../redux/reducers/userReducers";
+import { authReducer, userReducer } from "../redux/reducers/userReducers";
 
 const reducer = combineReducers({
   products: productsReducer,
   productDetails: productDetailsReducer,
   auth: authReducer,
+  user: userReducer
 });
 
 const initialState = {};

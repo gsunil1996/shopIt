@@ -7,10 +7,12 @@ import Header from './components/layouts/Header';
 import ProductDetails from './components/product/ProductDetails';
 import Login from './components/user/Login';
 import Register from './components/user/Register';
-
 import { loadUser } from "./redux/actions/userActions";
 import store from "./redux/store";
 import Profile from './components/user/Profile';
+import ProtectedRoute from './components/protectedRoute/ProtectedRoute';
+import UpdateProfile from './components/user/UpdateProfile';
+import UpdatePassword from './components/user/UpdatePassword';
 
 
 const App = () => {
@@ -30,7 +32,9 @@ const App = () => {
 
           <Route path="/login" component={Login} />
           <Route path="/register" component={Register} />
-          <Route path="/me" component={Profile} exact />
+          <ProtectedRoute path="/me" component={Profile} exact />
+          <ProtectedRoute path="/me/update" component={UpdateProfile} exact />
+          <ProtectedRoute path="/password/update" component={UpdatePassword} exact />
         </div>
         <Footer />
       </BrowserRouter>
