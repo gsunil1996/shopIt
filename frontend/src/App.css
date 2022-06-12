@@ -615,9 +615,15 @@ ul.CTAs a {
   color: grey;
 }
 
-.categoryClick:hover, .ratingClick:hover {
+.categoryClick:hover {
   background-color: #fa9c23;
   color: white;
+  padding-left: 15px;
+  border-radius: 2px;
+}
+
+.ratingClick:hover{
+background-color: palevioletred;
   padding-left: 15px;
   border-radius: 2px;
 }
