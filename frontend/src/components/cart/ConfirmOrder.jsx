@@ -62,7 +62,7 @@ const ConfirmOrder = ({ history }) => {
 
 
                                     <div className="col-4 col-lg-4 mt-4 mt-lg-0">
-                                        <p>{item.quantity} x ${item.price} = <b>${(item.quantity * item.price).toFixed(2)}</b></p>
+                                        <p>{item.quantity} x ₹{item.price} = <b>₹{(item.quantity * item.price).toFixed(2)}</b></p>
                                     </div>
 
                                 </div>
@@ -79,13 +79,13 @@ const ConfirmOrder = ({ history }) => {
                     <div id="order_summary">
                         <h4>Order Summary</h4>
                         <hr />
-                        <p>Subtotal:  <span className="order-summary-values">${itemsPrice}</span></p>
-                        <p>Shipping: <span className="order-summary-values">${shippingPrice}</span></p>
-                        <p>Tax:  <span className="order-summary-values">${taxPrice}</span></p>
+                        <p>Subtotal:  <span className="order-summary-values">₹{itemsPrice}</span></p>
+                        <p>Shipping: <span className="order-summary-values">₹{shippingPrice}</span></p>
+                        <p>Tax:  <span className="order-summary-values">₹{taxPrice}</span></p>
 
                         <hr />
 
-                        <p>Total: <span className="order-summary-values">${totalPrice}</span></p>
+                        <p>Total: <span className="order-summary-values">₹{totalPrice}</span></p>
 
                         <hr />
                         <button id="checkout_btn" className="btn btn-primary btn-block" onClick={processToPayment}>Proceed to Payment</button>

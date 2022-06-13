@@ -17,7 +17,7 @@ const Shipping = ({ history }) => {
     const [city, setCity] = useState(shippingInfo.city)
     const [postalCode, setPostalCode] = useState(shippingInfo.postalCode)
     const [phoneNo, setPhoneNo] = useState(shippingInfo.phoneNo)
-    const [country, setCountry] = useState(shippingInfo.country)
+    const [country, setCountry] = useState(shippingInfo.country || "Andorra");
 
     const dispatch = useDispatch();
 
