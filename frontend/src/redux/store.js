@@ -16,6 +16,8 @@ import {
   authReducer,
   userReducer,
   forgotPasswordReducer,
+  allUsersReducer,
+  userDetailsReducer,
 } from "../redux/reducers/userReducers";
 
 import { cartReducer } from "../redux/reducers/cartReducers";
@@ -23,24 +25,30 @@ import {
   newOrderReducer,
   myOrdersReducer,
   orderDetailsReducer,
+  allOrdersReducer,
+  orderReducer,
 } from "../redux/reducers/orderReducers";
 
 const reducer = combineReducers({
-  products: productsReducer,
-  productDetails: productDetailsReducer,
-  auth: authReducer,
-  user: userReducer,
-  forgotPassword: forgotPasswordReducer,
-  cart: cartReducer,
-  newOrder: newOrderReducer,
-  myOrders: myOrdersReducer,
-  orderDetails: orderDetailsReducer,
-  newProduct: newProductReducer,
-  product: productReducer,
-  newReview: newReviewReducer,
-  productReviews: productReviewsReducer,
-  review: reviewReducer,
-});
+    products: productsReducer,
+    productDetails: productDetailsReducer,
+    newProduct: newProductReducer,
+    product: productReducer,
+    productReviews: productReviewsReducer,
+    review: reviewReducer,
+    auth: authReducer,
+    user: userReducer,
+    allUsers: allUsersReducer,
+    userDetails: userDetailsReducer,
+    forgotPassword: forgotPasswordReducer,
+    cart: cartReducer,
+    newOrder: newOrderReducer,
+    myOrders: myOrdersReducer,
+    allOrders: allOrdersReducer,
+    orderDetails: orderDetailsReducer,
+    order: orderReducer,
+    newReview: newReviewReducer
+})
 
 let initialState = {
   cart: {

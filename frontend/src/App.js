@@ -28,6 +28,7 @@ import Payment from './components/cart/Payment';
 import OrderSuccess from './components/cart/OrderSuccess';
 import ListOrders from './components/order/ListOrders';
 import OrderDetails from './components/order/OrderDetails';
+import Dashboard from './components/admin/Dashboard';
 
 const App = () => {
 
@@ -78,7 +79,10 @@ const App = () => {
           />
           <ProtectedRoute path="/orders/me" component={ListOrders} exact />
           <ProtectedRoute path="/order/:id" component={OrderDetails} exact />
-        </div>
+          </div>
+
+          <ProtectedRoute path="/dashboard" isAdmin={true} component={Dashboard} exact />
+        
         <Footer />
       </BrowserRouter>
     </div>
