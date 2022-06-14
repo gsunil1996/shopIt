@@ -614,3 +614,17 @@ ul.CTAs a {
   font-size: 0.8rem;
   color: grey;
 }
+
+.categoryClick:hover {
+  background-color: #fa9c23;
+  color: white;
+  padding-left: 15px;
+  border-radius: 2px;
+}
+
+.ratingClick:hover {
+background-color: palevioletred;
+  color: white;
+  padding-left: 15px;
+  border-radius: 2px;
+}

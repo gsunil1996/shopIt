@@ -51,7 +51,7 @@ const Home = ({ match }) => {
   ];
 
   const keyword = match.params.keyword;
-
+  console.log(resultsPerPage, "resultsPerPage");
   useEffect(() => {
 
     if (error) {
