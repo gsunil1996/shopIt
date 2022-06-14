@@ -57,8 +57,6 @@ const Register = ({ history }) => {
 
         dispatch(register(formData));
 
-         console.log(formData, "After dispatch");
-
       };
 
       const onChange = (e) => {

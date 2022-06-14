@@ -36,7 +36,7 @@ const productSchema = new mongoose.Schema({
     },
   ],
 
-  category: [{
+  category: {
     type: String,
     required: [true, "Please select categeory for this product"],
     enum: {
@@ -53,11 +53,10 @@ const productSchema = new mongoose.Schema({
         "Sports",
         "Outdoor",
         "Home",
-        "All"
       ],
       message: "Please select correct category for product",
     },
-  }],
+  },
   seller: {
     type: String,
     required: [true, "Please enter product seller"],

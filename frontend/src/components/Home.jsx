@@ -47,11 +47,9 @@ const Home = ({ match }) => {
     "Sports",
     "Outdoor",
     "Home",
-    "All"
   ];
 
   const keyword = match.params.keyword;
-  console.log(resultsPerPage, "resultsPerPage");
   useEffect(() => {
 
     if (error) {
