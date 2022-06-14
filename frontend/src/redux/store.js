@@ -30,25 +30,25 @@ import {
 } from "../redux/reducers/orderReducers";
 
 const reducer = combineReducers({
-    products: productsReducer,
-    productDetails: productDetailsReducer,
-    newProduct: newProductReducer,
-    product: productReducer,
-    productReviews: productReviewsReducer,
-    review: reviewReducer,
-    auth: authReducer,
-    user: userReducer,
-    allUsers: allUsersReducer,
-    userDetails: userDetailsReducer,
-    forgotPassword: forgotPasswordReducer,
-    cart: cartReducer,
-    newOrder: newOrderReducer,
-    myOrders: myOrdersReducer,
-    allOrders: allOrdersReducer,
-    orderDetails: orderDetailsReducer,
-    order: orderReducer,
-    newReview: newReviewReducer
-})
+  products: productsReducer,
+  productDetails: productDetailsReducer,
+  newProduct: newProductReducer,
+  product: productReducer,
+  productReviews: productReviewsReducer,
+  review: reviewReducer,
+  auth: authReducer,
+  user: userReducer,
+  allUsers: allUsersReducer,
+  userDetails: userDetailsReducer,
+  forgotPassword: forgotPasswordReducer,
+  cart: cartReducer,
+  newOrder: newOrderReducer,
+  myOrders: myOrdersReducer,
+  allOrders: allOrdersReducer,
+  orderDetails: orderDetailsReducer,
+  order: orderReducer,
+  newReview: newReviewReducer,
+});
 
 let initialState = {
   cart: {
