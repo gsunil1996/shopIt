@@ -146,7 +146,7 @@ const ProductDetails = ({ match }) => {
 
                             <hr />
 
-                            <p id="product_price">${product.price}</p>
+                            <p id="product_price">₹{product.price}</p>
                             <div className="stockCounter d-inline">
                                 <span className="btn btn-danger minus" onClick={decreaseQty}>-</span>
 
