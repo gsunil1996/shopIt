@@ -72,24 +72,25 @@ const NewProduct = ({ history }) => {
         dispatch(newProduct(formData))
     }
 
-    const onChange = e => {
+    const onChange = (e) => {
+      const files = Array.from(e.target.files);
 
-        const files = Array.from(e.target.files)
+      setImagesPreview([]);
+      setImages([]);
 
-        files.forEach(file => {
-            const reader = new FileReader();
+      files.forEach((file) => {
+        const reader = new FileReader();
 
-            reader.onload = () => {
-                if (reader.readyState === 2) {
+        reader.onload = () => {
+          if (reader.readyState === 2) {
+            setImagesPreview((oldArray) => [...oldArray, reader.result]);
+            setImages((oldArray) => [...oldArray, reader.result]);
+          }
+        };
 
-                    setImagesPreview(imagesPreview => [...imagesPreview, reader.result])
-                    setImages(images => [...images, reader.result]);
-                }
-            }
-
-            reader.readAsDataURL(file)
-        })
-    }
+        reader.readAsDataURL(file);
+      });
+    };
 
 
     return (

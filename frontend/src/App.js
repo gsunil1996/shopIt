@@ -1,41 +1,41 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState } from "react";
 import "./App.css";
 import { BrowserRouter, Route } from "react-router-dom";
-import Home from './components/Home';
-import Footer from './components/layouts/Footer';
-import Header from './components/layouts/Header';
-import ProductDetails from './components/product/ProductDetails';
-import Login from './components/user/Login';
-import Register from './components/user/Register';
+import Home from "./components/Home";
+import Footer from "./components/layouts/Footer";
+import Header from "./components/layouts/Header";
+import ProductDetails from "./components/product/ProductDetails";
+import Login from "./components/user/Login";
+import Register from "./components/user/Register";
 import { loadUser } from "./redux/actions/userActions";
 import store from "./redux/store";
-import Profile from './components/user/Profile';
-import ProtectedRoute from './components/protectedRoute/ProtectedRoute';
-import UpdateProfile from './components/user/UpdateProfile';
-import UpdatePassword from './components/user/UpdatePassword';
-import ForgotPassword from './components/user/ForgotPassword';
-import NewPassword from './components/user/NewPassword';
-import Cart from './components/cart/Cart';
-import Shipping from './components/cart/Shipping';
-import ConfirmOrder from './components/cart/ConfirmOrder';
+import Profile from "./components/user/Profile";
+import ProtectedRoute from "./components/protectedRoute/ProtectedRoute";
+import UpdateProfile from "./components/user/UpdateProfile";
+import UpdatePassword from "./components/user/UpdatePassword";
+import ForgotPassword from "./components/user/ForgotPassword";
+import NewPassword from "./components/user/NewPassword";
+import Cart from "./components/cart/Cart";
+import Shipping from "./components/cart/Shipping";
+import ConfirmOrder from "./components/cart/ConfirmOrder";
 import axios from "axios";
 
-
 // Payment
-import { Elements } from '@stripe/react-stripe-js'
-import { loadStripe } from '@stripe/stripe-js'
-import Payment from './components/cart/Payment';
-import OrderSuccess from './components/cart/OrderSuccess';
-import ListOrders from './components/order/ListOrders';
-import OrderDetails from './components/order/OrderDetails';
-import Dashboard from './components/admin/Dashboard';
-import ProductsList from './components/admin/ProductsList';
-import NewProduct from './components/admin/NewProduct';
-import { useSelector } from 'react-redux';
-import UpdateProduct from './components/admin/UpdateProduct';
+import { Elements } from "@stripe/react-stripe-js";
+import { loadStripe } from "@stripe/stripe-js";
+import Payment from "./components/cart/Payment";
+import OrderSuccess from "./components/cart/OrderSuccess";
+import ListOrders from "./components/order/ListOrders";
+import OrderDetails from "./components/order/OrderDetails";
+import Dashboard from "./components/admin/Dashboard";
+import ProductsList from "./components/admin/ProductsList";
+import NewProduct from "./components/admin/NewProduct";
+import { useSelector } from "react-redux";
+import UpdateProduct from "./components/admin/UpdateProduct";
+import OrdersList from "./components/admin/OrdersList";
+import ProcessOrder from "./components/admin/ProcessOrder";
 
 const App = () => {
-
   const [stripeApiKey, setStripeApiKey] = useState("");
 
   useEffect(() => {
@@ -50,7 +50,7 @@ const App = () => {
     getStripApiKey();
   }, []);
 
-   const { user, isAuthenticated, loading } = useSelector(state => state.auth)
+  const { user, isAuthenticated, loading } = useSelector((state) => state.auth);
 
   return (
     <div>
@@ -85,20 +85,49 @@ const App = () => {
           />
           <ProtectedRoute path="/orders/me" component={ListOrders} exact />
           <ProtectedRoute path="/order/:id" component={OrderDetails} exact />
-          </div>
+        </div>
 
-          <ProtectedRoute path="/dashboard" isAdmin={true} component={Dashboard} exact />
-        <ProtectedRoute path="/admin/products" isAdmin={true} component={ProductsList} exact />
-        <ProtectedRoute path="/admin/product" isAdmin={true} component={NewProduct} exact />
- <ProtectedRoute path="/admin/product/:id" isAdmin={true} component={UpdateProduct} exact />
-        
-        {!loading && (!isAuthenticated || user.role !== 'admin') && (
-          <Footer />
-        )}
-      
+        <ProtectedRoute
+          path="/dashboard"
+          isAdmin={true}
+          component={Dashboard}
+          exact
+        />
+        <ProtectedRoute
+          path="/admin/products"
+          isAdmin={true}
+          component={ProductsList}
+          exact
+        />
+        <ProtectedRoute
+          path="/admin/product"
+          isAdmin={true}
+          component={NewProduct}
+          exact
+        />
+        <ProtectedRoute
+          path="/admin/product/:id"
+          isAdmin={true}
+          component={UpdateProduct}
+          exact
+        />
+        <ProtectedRoute
+          path="/admin/orders"
+          isAdmin={true}
+          component={OrdersList}
+          exact
+        />
+        <ProtectedRoute
+          path="/admin/order/:id"
+          isAdmin={true}
+          component={ProcessOrder}
+          exact
+        />
+
+        {!loading && (!isAuthenticated || user.role !== "admin") && <Footer />}
       </BrowserRouter>
     </div>
   );
-}
+};
 
-export default App
+export default App;
