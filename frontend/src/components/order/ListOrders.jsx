@@ -67,10 +67,10 @@ const ListOrders = () => {
           rows: [],
         };
 
-        orders.forEach(order => {
+      orders.forEach(order => {
             data.rows.push({
               id: order._id,
-              date: order.createdAt.split("T")[0],
+              date: new Date(order.createdAt).toLocaleString(),
               productName: order.orderItems[0].name,
               numOfItems: order.orderItems.length,
               amount: `₹${order.totalPrice}`,

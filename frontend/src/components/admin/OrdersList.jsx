@@ -79,7 +79,7 @@ const OrdersList = ({ history }) => {
             console.log(order, "order")
             data.rows.push({
                 id: order._id,
-                date: order.createdAt.split("T")[0],
+                date: new Date(order.createdAt).toLocaleString(),
                 numofItems: order.orderItems.length,
                 amount: `₹${order.totalPrice}`,
                 status: order.orderStatus && String(order.orderStatus).includes('Delivered')
