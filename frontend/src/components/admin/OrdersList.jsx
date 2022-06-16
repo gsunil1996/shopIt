@@ -71,6 +71,7 @@ const OrdersList = ({ history }) => {
         }
 
         orders.forEach(order => {
+            console.log(order, "order")
             data.rows.push({
                 id: order._id,
                 numofItems: order.orderItems.length,
