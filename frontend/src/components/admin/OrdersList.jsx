@@ -63,6 +63,11 @@ const OrdersList = ({ history }) => {
                     sort: 'asc'
                 },
                 {
+                    label: 'Date',
+                    field: 'date',
+                    sort: 'asc'
+                },
+                {
                     label: 'Actions',
                     field: 'actions',
                 },
@@ -74,6 +79,7 @@ const OrdersList = ({ history }) => {
             console.log(order, "order")
             data.rows.push({
                 id: order._id,
+                date: order.createdAt.split("T")[0],
                 numofItems: order.orderItems.length,
                 amount: `₹${order.totalPrice}`,
                 status: order.orderStatus && String(order.orderStatus).includes('Delivered')

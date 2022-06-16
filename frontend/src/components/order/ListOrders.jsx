@@ -54,6 +54,11 @@ const ListOrders = () => {
               sort: "asc",
             },
             {
+              label: "Date",
+              field: "date",
+              sort: "asc",
+            },
+            {
               label: "Actions",
               field: "actions",
               sort: "asc",
@@ -63,9 +68,9 @@ const ListOrders = () => {
         };
 
         orders.forEach(order => {
-            
             data.rows.push({
               id: order._id,
+              date: order.createdAt.split("T")[0],
               productName: order.orderItems[0].name,
               numOfItems: order.orderItems.length,
               amount: `₹${order.totalPrice}`,
