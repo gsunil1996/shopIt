@@ -13,8 +13,6 @@
     "mdbreact": "^5.0.1",
     "rc-slider": "^9.6.5",
     "react": "^17.0.1",
-    "react-alert": "^7.0.3",
-    "react-alert-template-basic": "^1.0.2",
     "react-bootstrap": "^1.4.0",
     "react-dom": "^17.0.1",
     "react-helmet": "^6.1.0",
