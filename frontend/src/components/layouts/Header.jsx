@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { useAlert } from "react-alert";
 import Search from "./Search";
 import { logout } from "../../redux/actions/userActions";
+import { CLEAR_CART } from "../../redux/constants/cartConstants";
 
 const Header = () => {
   const alert = useAlert();
@@ -13,6 +14,7 @@ const Header = () => {
 
 const logoutHandler = () => {
   dispatch(logout());
+   dispatch({ type: CLEAR_CART });
   alert.success("Logged out successfully.");
 };
 

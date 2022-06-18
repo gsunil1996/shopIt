@@ -1,8 +1,15 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import MetaData from "../layouts/MetaData";
+import { CLEAR_CART } from "../../redux/constants/cartConstants";
+import { useDispatch } from "react-redux";
+import { useEffect } from "react";
 
 const OrderSuccess = () => {
+  const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch({ type: CLEAR_CART });
+  }, [])
   return (
     <>
       <MetaData title={"Order Success"} />
